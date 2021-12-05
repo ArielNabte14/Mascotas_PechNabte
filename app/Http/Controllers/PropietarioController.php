@@ -14,8 +14,7 @@ class PropietarioController extends Controller
      */
     public function index()
     {
-        //
-        return $propietarios=propietario::all();
+        return $propietarios=Propietario::all();
     }
 
     /**
@@ -47,7 +46,7 @@ class PropietarioController extends Controller
      */
     public function show($id)
     {
-        //
+        return $propietario=Propietario::find($id);
     }
 
     /**

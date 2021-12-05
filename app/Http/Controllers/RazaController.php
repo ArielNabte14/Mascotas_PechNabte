@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Mascota;
+use App\Raza;
 
-class MascotaController extends Controller
+class RazaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,17 @@ class MascotaController extends Controller
      */
     public function index()
     {
-        //
-        return $mascota=Mascota::all();
+        return $razas=Raza::all();
+    }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -27,17 +35,7 @@ class MascotaController extends Controller
      */
     public function store(Request $request)
     {
-        $mascota= new Mascota();
-
-        //$mascota->id_mascota=$request->get('id_mascota');
-        $mascota->nombre=$request->get('nombre');
-        $mascota->edad=$request->get('edad');
-        $mascota->peso=$request->get('peso');
-        $mascota->genero=$request->get('genero');
-        $mascota->id_especie=$request->get('id_especie');
-        $mascota->id_raza=$request->get('id_raza');
-
-        $mascota->save();
+        //
     }
 
     /**
@@ -48,7 +46,18 @@ class MascotaController extends Controller
      */
     public function show($id)
     {
-        return $mascota=Mascota::find($id);
+        return $raza=Raza::find($id);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
     }
 
     /**
@@ -60,16 +69,7 @@ class MascotaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $mascota=Mascota::find($id);
-
-        $mascota->nombre=$request->get('nombre');
-        $mascota->edad=$request->get('edad');
-        $mascota->peso=$request->get('peso');
-        $mascota->genero=$request->get('genero');
-        $mascota->id_especie=$request->get('id_especie');
-
-        $mascota->update();
-
+        //
     }
 
     /**
@@ -81,11 +81,5 @@ class MascotaController extends Controller
     public function destroy($id)
     {
         //
-        $mascota=Mascota::find($id);
-        $mascota->delete();
-    }
-
-    public function obtenerMascotas(){
-        return 'Holi';
     }
 }
