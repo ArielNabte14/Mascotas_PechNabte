@@ -10,18 +10,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>@yield('titulo')</title>
-  <meta name="token" id="token" value="{{ csrf_token() }}">
 
   <!-- Font Awesome Icons -->
-  <script src="{{asset('js/vue.js')}}" type="text/javascript"></script>
-  
-  <link rel="stylesheet" href="css/all.min.css">
+  <script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
+  <meta name="token" id="token" value="{{ csrf_token() }}">
 
+  <link rel="stylesheet" href="css/all.min.css">
+  
   <!-- Theme style -->
   <link rel="stylesheet" href="css/adminlte.min.css">
-
   <!-- Google Font: Source Sans Pro -->
-  
+  <!--<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">-->
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -34,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="index3.html" class="nav-link">Inicio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -234,9 +233,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-header -->
 
     <!-- Main content -->
+
     <div class="content">
       <div class="container-fluid">
-          @yield('contenido')
+        <!--inicio row-->
+        
+        <!-- /.row -->
+        @yield('contenido')
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
@@ -272,11 +275,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- jQuery -->
 <script src="js/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src=" js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="js/adminlte.min.js"></script>
 
-<script type="text/javascrip" src="{{asset('js/sweetalert2.all.min.js')}}"></script>
+@stack('scripts')
 
 
 </body>

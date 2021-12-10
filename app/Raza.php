@@ -6,18 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Raza extends Model
 {
+    //
     protected $table='razas';
-    protected $primaryKey='id_raza';
 
-    //define si la llave primaria es o no un numero autoincrementable
+    protected $primaryKey='id_razas';
+
     public $incrementing=true;
+    public $timestamps=false;
 
-    // activar o desactivar etiquetas de tiempo
+    public $fillabe=[
+        'id_razas',
+        'razas'
+    ];
 
-   public $timestamps=true;
-
-   public $fillable=[
-   	'id_raza',
-    'raza'
-   ];
 }

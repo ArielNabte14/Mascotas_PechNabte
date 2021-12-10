@@ -1,7 +1,4 @@
-
 <?php
-
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,35 +12,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
+
+
+
+
 Route::apiResource('apiMascota','MascotaController');
+Route::apiResource('apiEspecie','EspecieController');
+Route::apiResource(,'apiPropietario','PropietarioController');
 
-Route::apiResource('apiEspecie', 'EspecieController');
+Route::view('mascotas', 'mascotas');
+Route::get('pdf','ReporteController@pdf');
 
-Route::apiResource('apiPropietario', 'PropietarioController');
+//Rutas parametrizadas
 
-Route::apiResource('apiRaza', 'RazaController');
-
-Route::get('prueba', function(){
-    //return base64_encode('HOLA');
-    return DB::select("SELECT * FROM usuarios");
-});
-
-Route::get('Desencriptar', function(){
-    return base64_decode('SE9MQQ==');
-});
-
-Route::post('validar','AccesoController@validar');
- 
-Route::get('mascotas', function () {
-    return view('mascotas');
-});
-Route::get('especies', function () {
-    return view('especies');
-});
-Route::get('propietarios', function () {
-    return view('propietarios');
-
-});
-
+Route::get('getRazas/{id_especie}',[
+'as'=>'getRazas',
+'uses'=>'EspecieController@getRazas',
+]);
